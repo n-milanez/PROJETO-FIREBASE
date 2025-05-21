@@ -1,0 +1,59 @@
+<div class="container text-center">
+    <div class="row">
+        <div class="col-1">&nbsp;</div>
+        <div class="col bg-primary">
+            <nav class="navbar bg-primary navbar-expand-lg" data-bs-theme="dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">SISTEMA WEB</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="nav-link active" aria-current="page" href="/">Cadastrar</a>
+                            <a class="nav-link" href="/consulta">Consultar</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="col-1">&nbsp;</div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-1">&nbsp;</div>
+        <div class="col bg-white text-start p-3">
+            <h5>Cadastrar - Agendamento de Potenciais Clientes</h5>
+            <p>Sistema utilizado para agendamento de serviços.</p>
+
+            <div class="container text-center">
+                <div class="row bg-primary text-light fw-bold">
+                    <div class="col">Nome</div>
+                    <div class="col">Telefone</div>
+                    <div class="col">Origem</div>
+                    <div class="col">Data de Contato</div>
+                    <div class="col">Observação</div>
+                    <div class="col">Ações</div>
+                </div>
+
+                {{#each posts}}
+                <div class="row border-bottom py-2">
+                    <div class="col">{{this.nome}}</div>
+                    <div class="col">{{this.telefone}}</div>
+                    <div class="col">{{this.origem}}</div>
+                    <div class="col">{{this.data_contato}}</div>
+                    <div class="col">{{this.observacao}}</div>
+                    <div class="col">
+                        <a class="btn btn-sm btn-success" href="/atualizar/{{this.id}}">Editar</a>
+                        <a class="btn btn-sm btn-danger" href="/excluir/{{this.id}}">Excluir</a>
+                    </div>
+                </div>
+                {{/each}}
+
+            </div>
+        </div>
+        <div class="col-1">&nbsp;</div>
+    </div>
+</div>
